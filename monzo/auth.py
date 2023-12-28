@@ -172,6 +172,8 @@ class MonzoOAuth2Client(object):
             code=code,
         )
 
+        token.update({CLIENT_SECRET: self.client_secret})
+
         if self.session.token_updater:
             self.session.token_updater(token)
 
